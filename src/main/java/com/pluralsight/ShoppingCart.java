@@ -50,6 +50,20 @@ public class ShoppingCart
         }
     }
 
+    public void updateCartItem(int index, int quantity)
+    {
+        try
+        {
+            CartItem cartItem = cartItems.get(index);
+            cartItem.setQuantity(quantity);
+            cartItems.set(index, cartItem);
+        }
+        catch (IndexOutOfBoundsException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
     public ArrayList<CartItem> getCartItems()
     {
         return cartItems;
